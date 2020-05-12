@@ -69,7 +69,7 @@ class SchemaRepoRawSchemaClientTest extends Specification {
     def "should register subject and schema"() {
         given:
         wireMock.stubFor(get(subjectUrl(topicName, subjectNamingStrategy)).willReturn(notFoundResponse()))
-        wireMock.stubFor(put(subjectUrl(topicName,subjectNamingStrategy)).willReturn(okResponse()))
+        wireMock.stubFor(put(subjectUrl(topicName, subjectNamingStrategy)).willReturn(okResponse()))
         wireMock.stubFor(put(registerSchemaUrl(topicName, subjectNamingStrategy)).willReturn(okResponse()))
 
         when:
